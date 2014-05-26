@@ -1,0 +1,5 @@
+<form action='upload_file.php' method='post'enctype='multipart/form-data'>
+          <label for='file'>Image Name:</label>
+          <input type='file' name='file' id='file'><br>
+          <button type="submit" value =  "upload" style="margin-top:5px" id="add">Add</button>
+          </form>

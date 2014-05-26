@@ -1,0 +1,157 @@
+@charset "utf-8";
+/* CSS Document */
+.btn-default{color:#FFF;background-color:#000;border-color:#000}
+.navbar-inverse{background-color:#000;border-color:#000000}.navbar-inverse .navbar-brand{color:#999}
+.menu {text-align:center;}
+.image{display:inline-block;margin:10px 20px; padding:20px;}
+.navbar-default{background-color:#CCC;border-color:#CCC}
+.dropdown-menu{background-color:#000; margin:5px 20px;  padding:20px; } 
+.navimage{display:inline-block;margin: 5px 10px; padding:0px 10px;}
+/*******************************Calendar Top Navigation*********************************/
+body
+{
+background-color:#00000;
+}
+div#note{  text-shadow: 0px 2px 6px #555; }
+div#mybody{  text-shadow: 0px 2px 6px #555;  }
+div#calendar{
+  margin:0px auto;
+  padding:0px;
+  width: 602px;
+  font-family:Century Gothic, Century Gothic, Century Gothic, Century Gothic;
+  font-size:20px;
+  border-color: transparent;
+  text-shadow: 0px 2px 3px #555;
+  box-shadow:  0 0 0 10px rgba(0,0,0,0.3);   
+}
+ 
+div#calendar div.box{
+    position: relative;
+    top:0px;
+    left:0px;
+	right: 100px;
+    width:100%;
+    height:40px;
+    background-color:   #787878 ; 
+
+}
+ 
+div#calendar div.header{
+    line-height:40px;  
+    vertical-align:middle;
+    position:absolute;
+    left:11px;
+    top:0px;
+    width:582px;
+    height:40px;   
+    text-align:center;
+}
+ 
+div#calendar div.header a.prev,div#calendar div.header a.next{ 
+    position:absolute;
+    top:0px;   
+    height: 17px;
+    display:block;
+    cursor:pointer;
+    text-decoration:none;
+    color:#FFF;
+}
+ 
+div#calendar div.header span.title{
+    color:#FFF;
+    font-size:18px;
+	  text-shadow: 0px -48px 3px #444;
+}
+ 
+ 
+div#calendar div.header a.prev{
+    left:0px;
+	  text-shadow: 0px 2px 3px #555;
+}
+ 
+div#calendar div.header a.next{
+    right:0px;
+	  text-shadow: 0px 2px 3px #555;
+}
+ 
+ 
+ 
+ 
+/*******************************Calendar Content Cells*********************************/
+div#calendar div.box-content{
+    border:-10px solid #787878 ;
+    border-top:none;
+	  text-shadow: 0px 2px 3px #555;
+	 
+}
+ 
+ 
+ 
+div#calendar ul.label{
+    margin: 10px;
+    margin-top:5px;
+    margin-left: 0px;
+	  text-shadow: 0px 2px 3px #555;
+	  opacity:.9;
+}
+ 
+div#calendar ul.label li{
+    margin:3px;
+    padding:10px;
+    margin-right: 0px;  
+	    margin-left:2px;  
+    float:left;
+    list-style-type:none;
+    width: 80px;
+    height:40px;
+    line-height:40px;
+    vertical-align:middle;
+    text-align:center;
+    color:white;
+    font-size: 15px;
+	font-style:Century Gothic;
+	  text-shadow: 0px 2px 3px #555;
+
+}
+ 
+ 
+div#calendar ul.dates{
+    float:left;
+    margin: 0px;
+    padding: 0px;
+    margin-left: 15px;
+	 margin-right: 5px;
+    margin-bottom: 5px;
+	  text-shadow: 0px 2px 3px #555;
+}
+ 
+/** overall width = width+padding-right**/
+div#calendar ul.dates li{
+    margin:0px;
+    padding:0px;
+    margin-right:3.5px;
+	    margin-left:3.5px;
+    margin-top: 5px;
+	
+    line-height:80px;
+    vertical-align:middle;
+    float:left;
+    list-style-type:none;
+    width:50px;
+    height:80px;
+    font-size:20px;
+	font-style: Century-Gothic;
+    background-color: transparent;
+    color:#white;
+    text-align:center; 
+	
+	 text-shadow: 0px 2px 3px #555;
+} 
+ 
+:focus{
+    outline:none;
+}
+ 
+div.clear{
+    clear:both;
+}     

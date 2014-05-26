@@ -1,0 +1,58 @@
+ <div class="tab-content" >
+	
+              <div class="tab-pane active">
+            
+                <div class="container-fluid well" >
+                      <div id="mytable1">
+							   
+                 <table id="myTable1" class="display">
+                   <thead>
+                     <tr>
+                        <td><strong></strong></td>
+                       <td><strong>Equipment Name</strong></td>
+                       <td><strong>Rental Price</strong></td>
+					   <td><strong>Description</strong></td>
+					   <td><strong>Quantity</strong></td>
+<td><strong></strong></td>
+                        <td style="text-align:center"><strong>Action</strong></td>
+						</tr>
+                   </thead>
+	
+                   <tbody>
+
+                     <?php
+                       $a=1;
+                       require('dbcon.php');
+                        $query="select * from equipment";
+                       $result=mysql_query($query);
+                       while($row=mysql_fetch_array($result))
+	                   {
+                         echo "<tr>";
+	                          ?>
+                       <td> <img class="img-circle" src="/Powerlink/Equipment Images/<?= $row['eqp_Image']?>"  style="height: 160px; width:160px;" ></img></td> 
+                       <?php
+					 //  echo "<td><img src='getImage.php' id='".$row['eqp_id']."' width='175' height='200' /></td>";
+
+echo "<td>".$row['eqp_name']."</td>";
+	                     echo "<td>".$row['eqp_rentprice']."</td>";
+	                     echo "<td>".$row['eqp_desc']."</td>";			
+                         echo "<td>".$row['eqp_qty']."</td>";		
+						 $a++;
+	                    }
+						                     
+					?>
+
+					                     
+					     
+                    </tbody>
+					
+                 </table>
+</div>
+					 
+             </div>
+          </div>
+        </div> 
+      </div>
+   </div>
+  </div>
+ 
