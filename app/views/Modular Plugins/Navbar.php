@@ -26,7 +26,7 @@
 						               <li><a href="Order" class="glow">        Order                </a></li>
       				             <li><a href="package" class="glow">      Packages             </a></li>
                            <li><a href="Equipment" class="glow">    Equipment            </a></li>
-	 				                 <li><a href="Employee" class="glow">     Employee             </a></li>
+	 				                 <li><a href="profile" class="glow">     Employee             </a></li>
       								     <li><a href="event_dates" class="glow">  Event                </a></li> 
       				   				   <li><a href="quotation" class="glow">    Quotation            </a></li>
       				   				   <li><a href="Gallery" class="glow">      Gallery              </a></li>

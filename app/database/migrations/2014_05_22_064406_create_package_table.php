@@ -13,9 +13,11 @@ class CreatePackageTable extends Migration {
 	public function up()
 	{
 		Schema::create('package', function(Blueprint $table)
-		{
-			$table->increments('pkg_id');
+		{	
+			$table->increments('id');
+			$table->unsignedInteger('pkg_id');
 			$table->integer('pkg_equiplistid');
+				
 			$table->integer('pkg_price');
 			$table->integer('pkg_discount');
 			$table->string('pkg_name',15);

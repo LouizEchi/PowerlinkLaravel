@@ -55,7 +55,7 @@
       <td>
       <div class="form-group">
         {{ Form::label('employee_Image', 'Employee Image') }}
-        {{ Form::text('employee_Image', Input::old('email'), array('class' => 'form-control')) }}
+        {{ Form::text('employee_Image', Input::old('string'), array('class' => 'form-control')) }}
       </div>
       </td>
        <td></td>

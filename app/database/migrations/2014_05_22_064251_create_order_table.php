@@ -14,11 +14,18 @@ class CreateOrderTable extends Migration {
 	{
 		Schema::create('order', function(Blueprint $table)
 		{
-			$table->increments('order_id');
-			$table->integer('order_custid');
-			$table->integer('order_agentid');
-			$table->integer('order_eventid');
-			$table->integer('order_employlistid');
+			$table->increments('id');
+			$table->unsignedInteger('order_id');
+			$table->unsignedInteger('order_custid');
+			
+			$table->unsignedInteger('equipment_id');
+			
+			$table->unsignedInteger('order_agentid');
+			
+			$table->unsignedInteger('order_eventid');
+				
+			$table->unsignedInteger('order_employlistid');
+			
 			$table->date('ordersched_date');
 		});
 	}

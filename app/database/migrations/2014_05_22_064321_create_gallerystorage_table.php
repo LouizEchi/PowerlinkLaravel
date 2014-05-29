@@ -14,7 +14,8 @@ class CreateGallerystorageTable extends Migration {
 	{
 		Schema::create('gallery_storage', function(Blueprint $table)
 		{
-			$table->increments('Gallery_id');
+			$table->increments('id');
+			$table->unsignedInteger('Gallery_id');
 			$table->string('Gallery_Image',40);
 		});
 	}

@@ -3,7 +3,6 @@
 
 <div class="page-wrap">
   <div class="col-xs-6">
-    <h1 style="color:gray; font-size: 40px;text-align: center;margin-top: 70px;margin-right:20px; ">Agent's Portal</h1>
     <p>
       @include('Modular Plugins/LogInForm')
     </p>

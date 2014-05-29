@@ -14,7 +14,8 @@ class CreateQuotationTable extends Migration {
 	{
 		Schema::create('quotation', function(Blueprint $table)
 		{
-			$table->increments('quot_id');
+			$table->increments('id');
+			$table->unsignedInteger('quot_id');
 			$table->string('quot_name');
 			$table->date('quot_date');
 			$table->integer('quot_pkgid');

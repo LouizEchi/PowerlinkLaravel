@@ -14,9 +14,9 @@ class CreateEmployeelistTable extends Migration {
 	{
 		Schema::create('employee_list', function(Blueprint $table)
 		{
-			$table->increments('list_id');
+			$table->increments('id');
 			$table->integer('employeelist_id');
-			$table->integer('employee_id');
+			$table->unsignedInteger('employee_id');
 		});
 	}
 

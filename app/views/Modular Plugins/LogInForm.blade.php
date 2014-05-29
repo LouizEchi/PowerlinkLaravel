@@ -3,11 +3,16 @@
 
 ?>
     <div id="login">
-      @if (Auth::attempt(array('username' => 'Louiz', 'password' => '12345')))
-         
+      @if (Auth::attempt(array('username' => 'Louiz', 'password' => '12342')))
+         <h1 style="color:gray; font-size: 40px;text-align: center; margin-bottom: 10px;margin-top: 70px;margin-right:20px; ">
+         {{employee::getEmployeeType(getAuth::user()->employee_id)}}'s Portal
+         </h1>
          <h1 style="font-size 20px;"> Welcome,  {{Auth::user()->username}} </h1>
       
       @else
+        <h1 style="color:gray; font-size: 40px; text-align: center; margin-bottom: 20px;margin-top: 70px;margin-right:20px; ">
+        Admin/Agent <br><br> Portal
+        </h1>
         {{ Form::open(array('url' => '/'))  }}
 
             <fieldset class="clearfix">

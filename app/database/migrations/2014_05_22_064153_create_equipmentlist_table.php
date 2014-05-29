@@ -14,10 +14,12 @@ class CreateEquipmentlistTable extends Migration {
 	{
 		Schema::create('equipment_list', function(Blueprint $table)
 		{
-			$table->increments('list_id');
+			$table->increments('id');
 			$table->integer('equipmentlist_id');
-			$table->integer('equipment_id');
-			$table->integer('equipment_qty');
+			$table->unsignedInteger('equipment_id');
+			
+			$table->unsignedInteger('equipment_qty');
+		
 		});
 	}
 

@@ -54,7 +54,7 @@ Route::get('/Employees', function(){
 
 Route::resource('profile', 'employeeController');
 	// route to showlogin the login form
-	Route::get('', array('uses' => 'HomeController@showLogin'));
+	Route::get('/', array('uses' => 'HomeController@showLogin'));
 
 	// route to process the form
-	Route::post('', array('uses' => 'HomeController@doLogin'));
+	Route::post('/', array('uses' => 'HomeController@doLogin'));

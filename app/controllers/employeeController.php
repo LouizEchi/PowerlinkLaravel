@@ -1,7 +1,6 @@
 <?php
 
 class employeeController extends \BaseController {
-
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -38,27 +37,35 @@ class employeeController extends \BaseController {
 	public function store()
 	{
 		$rules = array(
-			'name'       => 'required',
-			'email'      => 'required|email',
-			'nerd_level' => 'required|numeric'
+			'employee_ln'       => 'required',
+			'employee_name'       => 'required',
+			'employee_mi'       => 'required',
+			'employee_age'       => 'required|numeric',
+			'employee_contact'       => 'required',
+			'employee_WorkSched'       => 'required',
+			'employee_Image'       => '',
 		);
 		$validator = Validator::make(Input::all(), $rules);
 
 		// process the login
 		if ($validator->fails()) {
-			return Redirect::to('nerds/create')
+			return Redirect::to('profile/create')
 				->withErrors($validator)
 				->withInput(Input::except('password'));
 		} else {
 			// store
-			$nerd = new Nerd;
-			$nerd->name       = Input::get('name');
-			$nerd->email      = Input::get('email');
-			$nerd->nerd_level = Input::get('nerd_level');
-			$nerd->save();
+			$profile = new employee;
+			$profile->employee_ln       = Input::get('employee_ln');
+			$profile->employee_name       = Input::get('employee_name');
+			$profile->employee_mi       = 	   Input::get('employee_mi');
+			$profile->employee_age       = 	   Input::get('employee_age');
+			$profile->employee_contact       = Input::get('employee_contact');
+			$profile->employee_WorkSched     = Input::get('employee_WorkSched');
+			$profile->employee_contact       = Input::get('employee_Image');
+			$profile->save();
 
 			// redirect
-			Session::flash('message', 'Successfully created nerd!');
+			Session::flash('message', 'Successfully created Profile!');
 			return Redirect::to('profile');
 		}
 	}
@@ -72,7 +79,11 @@ class employeeController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$employee = employee::where('employee_id' , '=', $id)->first();
+
+		// show the view and pass the nerd to it
+		return View::make('profile.showEmployee')
+			->with('employee', $employee);
 	}
 
 

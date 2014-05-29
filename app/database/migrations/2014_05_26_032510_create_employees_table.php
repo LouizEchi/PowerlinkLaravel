@@ -14,11 +14,13 @@ class CreateEmployeesTable extends Migration {
 	{
 		Schema::create('employees', function(Blueprint $table)
 		{
-		$table->increments('employee_id');
+			$table->increments('id');
+		    $table->unsignedInteger('employee_id');
 			$table->string('employee_ln',60);
 			$table->string('employee_name',60);
 			$table->char('employee_mi');
-			$table->integer('employee_age');
+			$table->integer('employee_type');
+			$table->date('employee_birthdate');
 			$table->string('employee_contact',20);
 			$table->string('employee_WorkSched',15);
 			$table->string('employee_otsrsrc',3);
@@ -34,7 +36,7 @@ class CreateEmployeesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('employee');
+		Schema::drop('employees');
 	}
 
 }

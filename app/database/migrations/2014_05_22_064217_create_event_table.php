@@ -14,10 +14,11 @@ class CreateEventTable extends Migration {
 	{
 		Schema::create('event', function(Blueprint $table)
 		{
-			$table->increments('event_id');
+			$table->increments('id');
+			$table->unsignedInteger('event_id');
 			$table->string('event_name',30);
 			$table->string('event_location',30);
-			$table->integer('event_pkgid');
+			$table->unsignedInteger('event_pkgid');
 			$table->time('event_timestart');
 			$table->time('event_timeend');
 		});
