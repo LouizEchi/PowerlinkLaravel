@@ -6,7 +6,6 @@
 
   
 /*JS Assets*/
-       Asset::add('Assets/js/jquery-2.1.1.js');
        Asset::add('Assets/js/bootstrap.min.js');
        Asset::add('Assets/js/bootstrap-modal.js');
 

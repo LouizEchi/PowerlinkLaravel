@@ -20,14 +20,33 @@ class employee extends Eloquent{
 			return $this->employee_name;
 		}
 
+		public function getEmployeeAge($date) 
+		{
+
+    		$date = strtotime($date);
+  	  		$y = date('Y', $date);  
+    		if (($m = (date('m') - date('m', $date))) < 0) 
+    		{
+        	  $y++;
+    		} 
+    		elseif ($m == 0 && date('d') - date('d', $date) < 0) 
+    		{
+      		  $y++;
+    		}
+    
+    return date('Y') - $y;
+    
+		}
+
 		public function getEmployeeMI()
 		{
 			return $this->employee_mi;
 
-		}public function getEmployeeType($id)
-		{
-			$employee = where('employee_id' , '=', $id)->first();
-			return $this->employee_type;
+		}
+		public function getEmployeeType($id)
+		{	
+			$employeetype = DB::table('employees')->where('employee_id', $id)->pluck('employee_type');
+			return $employeetype;
 		}
 
 		public function getEmployeeWorkSchedule()

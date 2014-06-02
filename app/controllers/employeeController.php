@@ -40,7 +40,7 @@ class employeeController extends \BaseController {
 			'employee_ln'       => 'required',
 			'employee_name'       => 'required',
 			'employee_mi'       => 'required',
-			'employee_age'       => 'required|numeric',
+			'employee_birthdate'       => 'required|date',
 			'employee_contact'       => 'required',
 			'employee_WorkSched'       => 'required',
 			'employee_Image'       => '',
@@ -53,13 +53,15 @@ class employeeController extends \BaseController {
 				->withErrors($validator)
 				->withInput(Input::except('password'));
 		} else {
-			// store
+			// Store
 			$profile = new employee;
+			$profile->employee_id       =  $profile->id; 
 			$profile->employee_ln       = Input::get('employee_ln');
 			$profile->employee_name       = Input::get('employee_name');
 			$profile->employee_mi       = 	   Input::get('employee_mi');
-			$profile->employee_age       = 	   Input::get('employee_age');
+			$profile->employee_birthdate       = 	   Input::get('employee_birthdate');
 			$profile->employee_contact       = Input::get('employee_contact');
+			$profile->employee_type     = Input::get('employee_type');
 			$profile->employee_WorkSched     = Input::get('employee_WorkSched');
 			$profile->employee_contact       = Input::get('employee_Image');
 			$profile->save();

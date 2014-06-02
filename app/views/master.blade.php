@@ -8,36 +8,42 @@
   @include('Modular Plugins/Navbar')
 </div>
  <body>
-	<div id="main" class="row">
+	<div class="main col-xs-12">
 
-			@yield('content')
-
+		@yield('content')
+	  <div id="push"></div>		
 	</div>
-<div class="push"></div>
+
      
-   @include('Modular Plugins/footer')
+   <footer id= "footer">
+    <div class= "row" style="margin-left: 5px;">
+      <p class="col-xs-4">Powerlink Professional Audio and Lights © 1999-2014</a></p> 
+    </div>
+   </footer>
 
   </body>
 
-<script type="text/javascript" src="/Assets/js/jquery-2.1.1.js">
+
+
+<script type="text/javascript">
+$(document).ready(function () {  
+  var top = $('#top').offset().top;
 $( window ).scroll(function() {
-  var scrollspace = $(window).scrollTop();
-          if ( scrollspace > 44 ) {
+  var scrollspace = $(this).scrollTop();
+       var addedClass;
+          if ( scrollspace >= top ) {
          $('#top').addClass(function( index, currentClass ) {
-           var addedClass;
            addedClass = "fixedpos";
            return addedClass;
           });
   }else{
          $('#top').removeClass(function( index, currentClass ) {
-           var addedClass;
            addedClass = "fixedpos";
            return addedClass;
           });
        }
   });
-</script>
-<script>
+});
+</script>  
 @yield('scripts')
-</script>
 </html>   

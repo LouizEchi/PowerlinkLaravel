@@ -1,6 +1,5 @@
 @extends('master')
 @section('content')
-<div class="container-primary">
 @if(Auth::attempt(array('username' =>'Bruce','password' => 'IAMBATMAN')))
 @if (Auth::check(array('user_type' => 'Admin')))
 <!-- will be used to show any messages -->
@@ -14,10 +13,9 @@
         <tr>
           <td>ID</td>
           <td>Name</td>
-          <td>Age</td>
+          <td>Date of Birth</td>
           <td>Contact</td>
           <td>Work Scheduke</td>
-          <td>Outsourced?</td>
           <td>Action</td>
         </tr>
       </thead>
@@ -26,13 +24,12 @@
         <tr>
           <td>{{ $value->employee_id }}</td>
           <td>{{ $value->employee_ln, " ", $value->employee_name," ", $value->employee_mi }}</td>
-          <td>{{ $value->employee_age }}</td>
+          <td>{{ $value->employee_birthdate }}</td>
           <td>{{ $value->employee_contact }}</td>
           <td>{{ $value->employee_WorkSched }}</td>
-          <td>{{ $value->employee_otsrsrc }}</td>
     
           <!-- we will also add show, edit, and delete buttons -->
-          <td>
+          <td class="col-xs-4">
     
             <!-- delete the nerd (uses the destroy method DESTROY /profile/{id} -->
             <!-- we will add this later since its a little more complicated than the other two buttons -->
@@ -42,7 +39,7 @@
     
             <!-- edit this nerd (uses the edit method found at GET /profile/{id}/edit -->
             <a class="btn btn-small btn-info" href="{{ URL::to('profile/' . $value->employee_id . '/edit') }}">Edit Agent</a>
-    
+            <a class="btn btn-small btn-danger" href="{{ URL::to('profile/' . $value->id . '/delete') }}">Delete Agent</a>
           </td>
         </tr>
       @endforeach
@@ -52,8 +49,8 @@
   {    
     <a class="btn btn-small btn-success" href="{{ URL::to('profile/' . $value->id) }}">View Agent</a>
     <a class="btn btn-small btn-info" href="{{ URL::to('profile/' . $value->id . '/edit') }}">Edit Agent</a>
+
   }
-</div>
 @endif
 @endif
 

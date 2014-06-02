@@ -1,8 +1,7 @@
 @extends('master')
 @section('content')
 
-<div class="page-wrap">
-  <div class="col-xs-6">
+  <div class="col-xs-4 jumbotron" style="margin-left:110px;">
     <p>
       @include('Modular Plugins/LogInForm')
     </p>
@@ -44,30 +43,7 @@
       </div>
     </div>
   </div><!-- /.container -->
- <?php
-  Helpers::setServerURL(100);
-  echo Helpers::getServerURL();
-   ?>
-</div>
 @stop
 @section('scripts')
-<script src="Assets/js/jquery-2.1.1.js"></script>
-<script type="text/javascript">
-$( window ).scroll(function() {
-  var scrollspace = $(window).scrollTop();
-          if ( scrollspace > 44 ) {
-         $('#top').addClass(function( index, currentClass ) {
-           var addedClass;
-           addedClass = "fixedpos";
-           return addedClass;
-          });
-  }else{
-         $('#top').removeClass(function( index, currentClass ) {
-           var addedClass;
-           addedClass = "fixedpos";
-           return addedClass;
-          });
-       }
-  });
-</script>
+
 @show

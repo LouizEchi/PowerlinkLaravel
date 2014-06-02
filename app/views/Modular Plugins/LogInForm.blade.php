@@ -2,17 +2,17 @@
 <?php Asset::css('Login');
 
 ?>
-    <div id="login">
-      @if (Auth::attempt(array('username' => 'Louiz', 'password' => '12345')))
-         <h1 style="color:gray; font-size: 40px;text-align: center; margin-bottom: 10px;margin-top: 70px;margin-right:20px; ">
-          {{ $employee = new employee; }}
+    <div id="login" >
+      @if (Auth::attempt(array('username' => 'Louiz', 'password' => '123452')))
+         <h1 style="color:white; font-size: 40px;text-align: center; margin-bottom: 40px;margin-top: 70px;margin-right:20px; ">
+           <?php $employee = new employee; ?>
 
          {{ $employee->getEmployeeType(Auth::user()->employee_id)}}'s Portal
          </h1>
-         <h1 style="font-size 20px;"> Welcome,  {{Auth::user()->username}} </h1>
+         <p>Welcome,  {{Auth::user()->username}} </p>
       
       @else
-        <h1 style="color:gray; font-size: 40px; text-align: center; margin-bottom: 20px;margin-top: 70px;margin-right:20px; ">
+        <h1 style="color:#fafafa; font-size: 40px; text-align: center; margin-bottom: 20px;margin-top: 70px;margin-right:20px; ">
         Admin/Agent <br><br> Portal
         </h1>
         {{ Form::open(array('url' => '/'))  }}

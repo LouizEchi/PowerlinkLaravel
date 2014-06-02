@@ -19,7 +19,7 @@ class CreateEmployeesTable extends Migration {
 			$table->string('employee_ln',60);
 			$table->string('employee_name',60);
 			$table->char('employee_mi');
-			$table->integer('employee_type');
+			$table->string('employee_type',10);
 			$table->date('employee_birthdate');
 			$table->string('employee_contact',20);
 			$table->string('employee_WorkSched',15);
