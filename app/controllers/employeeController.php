@@ -97,7 +97,11 @@ class employeeController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$employee = employee::where('employee_id' , '=', $id)->first();
+
+		// show the view and pass the nerd to it
+		return View::make('profile.updateEmployee')
+			->with('employee', $employee);
 	}
 
 
@@ -121,7 +125,12 @@ class employeeController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$employee = employee::where('employee_id' , '=', $id)->delete();
+	
+
+		// redirect
+		Session::flash('message', 'Successfully deleted the agent!');
+		return Redirect::to('profile');
 	}
 
 

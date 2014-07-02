@@ -67,7 +67,9 @@
       <td>
       <div class="form-group">
         {{ Form::label('employee_type', 'Agent Type') }}
-        {{ Form::text('employee_type', Input::old('name'), array('class' => 'form-control')) }}
+        <div style="color:black;">
+          {{ Form::select('employee_type', array('Admin' => 'Admin', 'Agent' => 'Agent'), 'Choose Type') }}
+        </div>
       </div>
       </td>
       <td></td>
